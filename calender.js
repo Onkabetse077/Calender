@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <style>
-body {
-font-family: Arial, sans-serif;
-}
-.calendar {
-}
-display: grid;
-grid-template-columns: repeat (7, 1fr);
-border: 1px solid #ccc;
-.day {
-border: 1px solid #ccc;
-padding: 5px;
-text-align: center;
-}
-</style>
-<title>Simple Calendar</title>
-</head>
-<body>
-<div class="calendar" id="calendar"></div>
-<script>
+
 const calendarContainer = document.getElementById("calendar");
-function create Calendar (year, month) {
+function create Calendar(year, month) {
 const daysInMonth = new Date(year, month + 1, 0).getDate(); const firstDayOfWeek = new Date(year, month, 1).getDay();
 }
 let calendarHTML = "";
 for (let i = 0; i < firstDayOfWeek; i++) {
 calendarHTML += "<div class='day'></div>";
 }
+
 for (let day = 1; day <= daysInMonth; day++) {
 calendarHTML += `<div class='day'>${day}</div>`;
 }
+
 calendar Container.innerHTML = calendarHTML;
 const current Date = new Date();
 createCalendar (currentDate.getFullYear(), currentDate.getMonth());
-</script>
-</body>
-</html>
